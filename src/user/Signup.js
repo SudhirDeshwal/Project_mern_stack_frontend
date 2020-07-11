@@ -1,31 +1,57 @@
-import React from 'react';
+import React , {useState} from 'react';
 import Layout from '../core/Layout'
 //import { API } from '../config';
 
 const Singup = () => {
 
-      //functions
+      //Sign up state
+    const [values , setValues] = useState(
+            {
+            name: " ",
+            email: " ",
+            password: " ",
+            error: " ",
+            success :false
+        })
 
+        //handle change
+
+        const handleChange = name => event => {
+            setValues(
+                { ...values, 
+                    error:false,
+                    [name]:event.target.value
+                       });
+                       }
+
+         //handle submit
+         
+         const clickSubmit = () => {
+             
+
+         }
+
+      //User Sign up
       const Signupform = () => (
            
         <form>
 
             <div className="form-group">
             <label className="text-muted">Name</label>
-            <input type="text" className="form-control"></input>
+            <input onChange={handleChange("name")} type="text" className="form-control"></input>
             </div>
 
             <div className="form-group">
             <label className="text-muted">Email</label>
-            <input type="email" className="form-control"></input>
+            <input onChange={handleChange("email")} type="email" className="form-control"></input>
             </div>
 
             <div className="form-group">
             <label className="text-muted">Password</label>
-            <input type="password" className="form-control"></input>
+            <input onChange={handleChange("password")} type="password" className="form-control"></input>
             </div>
              
-             <button className="btn-primary">
+             <button onClick={clickSubmit} className="btn-primary">
                    Submit
              </button>
         
@@ -34,16 +60,14 @@ const Singup = () => {
 
       )
 
-
-
-    
-    return (
+     return (
 
 <Layout 
 title="Sign up here" 
 discription="Create an Account"
 className="container col-md-8 offset-md-2">
  {Signupform()}
+ {JSON.stringify(values)}
 </Layout>
 
     );
