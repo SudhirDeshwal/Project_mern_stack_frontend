@@ -1,6 +1,12 @@
 import React from 'react';
+import Layout from '../core/Layout'
 
-const Singup = () => <div>hi from sing up</div>;
+const Singup = () => (
+
+<Layout title="Sign up here" discription="Create an Account">
+.....
+</Layout>
+);
 
 
 
