@@ -1,6 +1,7 @@
-import React , {useState , useEffect} from 'react';
+import React , {useState} from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../core/Layout';
-import { API } from '../config';
+//import { API } from '../config';
 
 const Singup = () => {
 
@@ -10,11 +11,11 @@ const Singup = () => {
             name: " ",
             email: " ",
             password: " ",
-            error: " ",
+            error: false,
             success :false
         })
 
-        const {name, email, password} = values
+        const {name, email, password , success ,error} = values
 
         //handle change in form
 
@@ -51,33 +52,37 @@ const Singup = () => {
 
     
 
-        // const res = await axios.post('https://localhost:8000/api', { hello: 'world' }, {
-        //     headers: {
-        //       // 'application/json' is the modern content-type for JSON, but some
-        //       // older servers may use 'text/json'.
-        //       // See: http://bit.ly/text-json
-        //       'content-type': 'text/json'
-        //     }
-        //   });
-          
-      //    res.data.headers['Content-Type']; // text/json
-
-
-
-
-
-
-
-
-
-         //handle submit
+         //handle submit and check error befor passed it to sign up function
          
          const clickSubmit = (event) => {
                   
             event.preventDefault()
-            signup({name: name, email :email, password:password});
-           
+            signup({name: name, email :email, password:password})
+             .then(data => {
+                 if(data.error) {
+
+                    setValues({
+                    ...values,
+                    error:data.error,
+                    success: false })
+                 }
+                 else {
+
+                    setValues({
+                        ...values,
+                        name: "",
+                        email:"",
+                        password:"",
+                        error:'',
+                        success:true
+                    
+                    })
+
+                 }
+             })
          }
+  
+        
 
 
 
@@ -88,17 +93,17 @@ const Singup = () => {
 
             <div className="form-group">
             <label className="text-muted">Name</label>
-            <input onChange={handleChange("name")} type="text" className="form-control"></input>
+            <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
             </div>
 
             <div className="form-group">
             <label className="text-muted">Email</label>
-            <input onChange={handleChange("email")} type="email" className="form-control"></input>
+            <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
             </div>
 
             <div className="form-group">
             <label className="text-muted">Password</label>
-            <input onChange={handleChange("password")} type="password" className="form-control"></input>
+            <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
             </div>
              
              <button onClick={clickSubmit} className="btn-primary">
@@ -110,12 +115,27 @@ const Singup = () => {
 
       )
 
+      const showError = () => (
+        <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
+            {error}
+        </div>
+    );
+
+    const showSuccess = () => (
+        <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
+            New account is created. Please <Link to="/signin">Signin</Link>
+        </div>
+    );
+
+
      return (
 
 <Layout 
 title="Sign up here" 
 discription="Create an Account"
 className="container col-md-8 offset-md-2">
+{showSuccess()}
+{showError()}
  {Signupform()}
  {JSON.stringify(values)}
 </Layout>
