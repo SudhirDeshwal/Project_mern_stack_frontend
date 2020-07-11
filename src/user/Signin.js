@@ -5,7 +5,7 @@ import Layout from '../core/Layout';
 
 const Singin = () => {
 
-      //Sign up state
+      //Sign in state
     const [values , setValues] = useState(
             {
             email: " ",
@@ -52,7 +52,7 @@ const Singin = () => {
 
     
 
-         //handle submit and check error befor passed it to sign up function
+         //handle submit and check error befor passed it to sign in function
          
          const clickSubmit = (event) => {
                   
@@ -82,7 +82,7 @@ const Singin = () => {
 
 
 
-      //User Sign up
+      //User Sign in
       const Signinform = () => (
            
         <form>
