@@ -22,20 +22,17 @@ const Menu = (props) =>
 <li className="nav-item">
 <Link 
 className="nav-link" 
-style={isActive(props.history,'/')} 
-to="/">Home</Link>
+style={isActive(props.history,'/')}   to="/">Home</Link>
 </li>
 
 <li className="nav-item">
 <Link className="nav-link" 
-style={isActive(props.history,'/signin')}  
-to="/signin">SignIn</Link>
+style={isActive(props.history,'/signin')}  to="/signin">SignIn</Link>
 </li>
 
 <li className="nav-item">
 <Link className="nav-link" 
-style={isActive(props.history,'/signup')}  
-to="/signup">SignUp</Link>
+style={isActive(props.history,'/signup')}  to="/signup">SignUp</Link>
 </li>
 </ul>
 </div>
