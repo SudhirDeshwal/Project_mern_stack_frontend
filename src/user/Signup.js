@@ -1,6 +1,6 @@
-import React , {useState} from 'react';
-import Layout from '../core/Layout'
-//import { API } from '../config';
+import React , {useState , useEffect} from 'react';
+import Layout from '../core/Layout';
+import { API } from '../config';
 
 const Singup = () => {
 
@@ -14,7 +14,9 @@ const Singup = () => {
             success :false
         })
 
-        //handle change
+        const {name, email, password} = values
+
+        //handle change in form
 
         const handleChange = name => event => {
             setValues(
@@ -22,14 +24,62 @@ const Singup = () => {
                     error:false,
                     [name]:event.target.value
                        });
-                       }
+                    }
+
+
+        //passing state data to backend db
+        const signup = user => {
+
+            console.log(user);
+            return fetch('http://localhost:8000/api/signup', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': 'http://localhost:3000'
+
+                },
+                body: JSON.stringify(user)
+            })
+                .then(response => {
+                    return response.json();
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        };
+
+    
+
+        // const res = await axios.post('https://localhost:8000/api', { hello: 'world' }, {
+        //     headers: {
+        //       // 'application/json' is the modern content-type for JSON, but some
+        //       // older servers may use 'text/json'.
+        //       // See: http://bit.ly/text-json
+        //       'content-type': 'text/json'
+        //     }
+        //   });
+          
+      //    res.data.headers['Content-Type']; // text/json
+
+
+
+
+
+
+
+
 
          //handle submit
          
-         const clickSubmit = () => {
-             
-
+         const clickSubmit = (event) => {
+                  
+            event.preventDefault()
+            signup({name: name, email :email, password:password});
+           
          }
+
+
 
       //User Sign up
       const Signupform = () => (
