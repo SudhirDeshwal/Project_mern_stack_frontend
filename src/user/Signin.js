@@ -87,6 +87,7 @@ const Singin = () => {
 
     //User Sign in
     const Signinform = () => (
+        <section className="container-fluid bg">
         <section className="row justify-content-center">
         <section className = "col-8">
         <form className="form-container">
@@ -105,7 +106,8 @@ const Singin = () => {
              </button>
              </form>
              </section>
-         </section>             
+         </section>   
+         </section>          
     )
 
     const showError = () => (
