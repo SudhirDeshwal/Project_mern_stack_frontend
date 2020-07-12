@@ -90,9 +90,11 @@ const Singup = () => {
 
     //User Sign up
     const Signupform = () => (
-
-        <form>
-
+     
+      <section className="row justify-content-center">
+       <section className = "col-8 ">  
+        <form className="form-container">
+  
             <div className="form-group">
                 <label className="text-muted">Name</label>
                 <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
@@ -108,13 +110,14 @@ const Singup = () => {
                 <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
             </div>
 
-            <button onClick={clickSubmit} className="btn-primary">
+            <button onClick={clickSubmit} className="btn btn-success">
                 Submit
              </button>
 
-
+     
         </form>
-
+        </section>
+        </section>
     )
 
     const showError = () => (

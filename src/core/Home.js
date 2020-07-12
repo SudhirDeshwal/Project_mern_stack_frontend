@@ -3,8 +3,8 @@ import Layout from './Layout'
 
 const Home = () => (
 
-<Layout title="Home Page" discription="Sudhir Products app , i am going to bulid up an amzing website.Wish me luck!">
-.....
+<Layout title="Explore Books" discription="Buy your Fav books here!!!">
+Books here
 </Layout>
 );
 

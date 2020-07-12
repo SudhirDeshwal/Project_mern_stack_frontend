@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import "../styles.css";
+
 
 
 const isActive = (history, path) => {
@@ -14,10 +16,12 @@ const isActive = (history, path) => {
 }
 
 const Menu = (props) =>
-    ( 
-
-        <div>
-            <ul className="nav nav-tabs bg-primary">
+    (
+         
+        <nav id="menu" className="navbar navbar-default navbar-fixed-top bg-warning">
+             <a class="navbar-brand">BCOMM</a>
+        <div className="container">
+            <ul className="nav nav-tabs bg-secondary">
 
                 <li className="nav-item">
                     <Link
@@ -36,6 +40,8 @@ const Menu = (props) =>
                 </li>
             </ul>
         </div>
+
+        </nav>
 
     )
 

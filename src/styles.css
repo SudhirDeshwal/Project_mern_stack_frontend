@@ -1,6 +1,12 @@
 /**
  * border radius
  */
+.form-container{
+    
+    padding: 30px;
+background-color: darkorange;    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
 
  .btn,
  .jumbotron,
@@ -8,8 +14,14 @@
      border-radius: 0px;
  }
  
- 
+ .jumbotron h4 {
+    font-weight: bold;
+}
 
+.nav{
+
+    box-shadow: 0px 0px 10px 0px #800080;
+}
  
  .jumbotron h2 {
      margin-top: -20px;
@@ -24,13 +36,17 @@
  /**
   * jumbotron animation
   */
- 
+ .navbar-brand {
+  font-weight: bold;
+  font-size: 28px;
+ }
  .jumbotron {
-     height: 180px;
-     color: #fff;
-     background-image: url("");
+     height: 350px;
+     color: white;
+     background-image: url(./img/header5.jpg);
      /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-     background-size: 400% 400%;
+     background-size: cover;
+     box-shadow: 0px 0px 10px 0px #000;
      /* -webkit-animation: Gradient 15s ease infinite;
      -moz-animation: Gradient 15s ease infinite;
      animation: Gradient 15s ease infinite; */

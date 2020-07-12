@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Layout from '../core/Layout';
 //import { API } from '../config';
+import "../styles.css";
 
 const Singin = () => {
 
@@ -9,7 +10,7 @@ const Singin = () => {
     const [values, setValues] = useState(
         {
             email: " ",
-            password: " ",
+            password: "",
             error: "",
             loading: false,
             redirect: false
@@ -86,12 +87,10 @@ const Singin = () => {
 
     //User Sign in
     const Signinform = () => (
-
-        <form>
-
-
-
-            <div className="form-group">
+        <section className="row justify-content-center">
+        <section className = "col-8">
+        <form className="form-container">
+          <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
             </div>
@@ -101,13 +100,12 @@ const Singin = () => {
                 <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
             </div>
 
-            <button onClick={clickSubmit} className="btn-primary">
+            <button onClick={clickSubmit} className="btn btn-success">
                 Submit
              </button>
-
-
-        </form>
-
+             </form>
+             </section>
+         </section>             
     )
 
     const showError = () => (
