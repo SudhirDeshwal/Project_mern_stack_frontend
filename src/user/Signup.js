@@ -1,121 +1,123 @@
-import React , {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../core/Layout';
 //import { API } from '../config';
 
 const Singup = () => {
 
-      //Sign up state
-    const [values , setValues] = useState(
-            {
+    //Sign up state
+    const [values, setValues] = useState(
+        {
             name: " ",
             email: " ",
             password: " ",
             error: false,
-            success :false
+            success: false
         })
 
-        const {name, email, password , success ,error} = values
+    const { name, email, password, success, error } = values
 
-        //handle change in form
+    //handle change in form
 
-        const handleChange = name => event => {
-            setValues(
-                { ...values, 
-                    error:false,
-                    [name]:event.target.value
-                       });
-                    }
+    const handleChange = name => event => {
+        setValues(
+            {
+                ...values,
+                error: false,
+                [name]: event.target.value
+            });
+    }
 
 
-        //passing state data to backend db
-        const signup = user => {
+    //passing state data to backend db
+    const signup = user => {
 
-            console.log(user);
-            return fetch('http://localhost:8000/api/signup', {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/json',
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:3000'
+        console.log(user);
+        return fetch('http://localhost:8000/api/signup', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:3000'
 
-                },
-                body: JSON.stringify(user)
+            },
+            body: JSON.stringify(user)
+        })
+            .then(response => {
+                return response.json();
             })
-                .then(response => {
-                    return response.json();
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        };
+            .catch(err => {
+                console.log(err);
+            });
+    };
 
-    
 
-         //handle submit and check error befor passed it to sign up function
-         
-         const clickSubmit = (event) => {
-                  
-            event.preventDefault()
-            signup({name: name, email :email, password:password})
-             .then(data => {
-                 if(data.error) {
+
+    //handle submit and check error befor passed it to sign up function
+
+    const clickSubmit = (event) => {
+
+        event.preventDefault()
+        signup({ name: name, email: email, password: password })
+            .then(data => {
+                if (data.error) {
 
                     setValues({
-                    ...values,
-                    error:data.error,
-                    success: false })
-                 }
-                 else {
+                        ...values,
+                        error: data.error,
+                        success: false
+                    })
+                }
+                else {
 
                     setValues({
                         ...values,
                         name: "",
-                        email:"",
-                        password:"",
-                        error:'',
-                        success:true
-                    
+                        email: "",
+                        password: "",
+                        error: '',
+                        success: true
+
                     })
 
-                 }
-             })
-         }
-  
-        
+                }
+            })
+    }
 
 
 
-      //User Sign up
-      const Signupform = () => (
-           
+
+
+    //User Sign up
+    const Signupform = () => (
+
         <form>
 
             <div className="form-group">
-            <label className="text-muted">Name</label>
-            <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
+                <label className="text-muted">Name</label>
+                <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
             </div>
 
             <div className="form-group">
-            <label className="text-muted">Email</label>
-            <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
+                <label className="text-muted">Email</label>
+                <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
             </div>
 
             <div className="form-group">
-            <label className="text-muted">Password</label>
-            <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
+                <label className="text-muted">Password</label>
+                <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
             </div>
-             
-             <button onClick={clickSubmit} className="btn-primary">
-                   Submit
+
+            <button onClick={clickSubmit} className="btn-primary">
+                Submit
              </button>
-        
+
 
         </form>
 
-      )
+    )
 
-      const showError = () => (
+    const showError = () => (
         <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
             {error}
         </div>
@@ -128,17 +130,17 @@ const Singup = () => {
     );
 
 
-     return (
+    return (
 
-<Layout 
-title="Sign up here" 
-discription="Create an Account"
-className="container col-md-8 offset-md-2">
-{showSuccess()}
-{showError()}
- {Signupform()}
- {JSON.stringify(values)}
-</Layout>
+        <Layout
+            title="Sign up here"
+            discription="Create an Account"
+            className="container col-md-8 offset-md-2">
+            {showSuccess()}
+            {showError()}
+            {Signupform()}
+            {JSON.stringify(values)}
+        </Layout>
 
     );
 };

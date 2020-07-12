@@ -3,7 +3,7 @@ import Layout from './Layout'
 
 const Home = () => (
 
-<Layout title="Home Page" discription="Sudhir Products app">
+<Layout title="Home Page" discription="Sudhir Products app , i am going to bulid up an amzing website.Wish me luck!">
 .....
 </Layout>
 );

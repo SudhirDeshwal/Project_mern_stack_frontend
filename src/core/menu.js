@@ -1,43 +1,43 @@
 import React from 'react';
-import {Link ,withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 
-const isActive = (history , path) => {
+const isActive = (history, path) => {
 
-    if(history.location.pathname === path) {
+    if (history.location.pathname === path) {
 
-        return {color: "#ff9900"}
+        return { color: "#ff9900" }
     }
     else {
-        return {color:"#ffffff"}
+        return { color: "#ffffff" }
     }
 }
 
-const Menu = (props) => 
-(
+const Menu = (props) =>
+    ( 
 
-<div>
-<ul className="nav nav-tabs bg-primary">
+        <div>
+            <ul className="nav nav-tabs bg-primary">
 
-<li className="nav-item">
-<Link 
-className="nav-link" 
-style={isActive(props.history,'/')}   to="/">Home</Link>
-</li>
+                <li className="nav-item">
+                    <Link
+                        className="nav-link"
+                        style={isActive(props.history, '/')} to="/">Home</Link>
+                </li>
 
-<li className="nav-item">
-<Link className="nav-link" 
-style={isActive(props.history,'/signin')}  to="/signin">SignIn</Link>
-</li>
+                <li className="nav-item">
+                    <Link className="nav-link"
+                        style={isActive(props.history, '/signin')} to="/signin">SignIn</Link>
+                </li>
 
-<li className="nav-item">
-<Link className="nav-link" 
-style={isActive(props.history,'/signup')}  to="/signup">SignUp</Link>
-</li>
-</ul>
-</div>
+                <li className="nav-item">
+                    <Link className="nav-link"
+                        style={isActive(props.history, '/signup')} to="/signup">SignUp</Link>
+                </li>
+            </ul>
+        </div>
 
-)
+    )
 
 
 
