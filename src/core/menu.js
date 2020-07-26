@@ -25,8 +25,7 @@ const Menu = (props) =>
 
                 <li className="nav-item">
                     <Link
-                        className="nav-link"
-                        style={isActive(props.history, '/')} to="/">Home</Link>
+                        className="nav-link"style={isActive(props.history, '/')} to="/">Home</Link>
                 </li>
 
                 <li className="nav-item">
