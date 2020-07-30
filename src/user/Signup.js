@@ -38,7 +38,7 @@ const Singup = () => {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost:3000'
+              
 
             },
             body: JSON.stringify(user)
@@ -83,10 +83,6 @@ const Singup = () => {
                 }
             })
     }
-
-
-
-
 
     //User Sign up
     const Signupform = () => (

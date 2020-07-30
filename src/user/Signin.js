@@ -30,6 +30,13 @@ const Singin = () => {
     }
 
 
+    const authenticate = (data, next) => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('jwt', JSON.stringify(data));
+            next();
+        }
+    };
+
     //passing state data to backend db
     const signin = user => {
 
@@ -42,14 +49,19 @@ const Singin = () => {
                 'Access-Control-Allow-Origin': 'http://localhost:3000'
 
             },
+            
             body: JSON.stringify(user)
+            
         })
+        
+
             .then(response => {
                 return response.json();
             })
             .catch(err => {
                 console.log(err);
             });
+            
     };
 
 
@@ -71,11 +83,15 @@ const Singin = () => {
                 }
                 else {
 
-                    setValues({
-                        ...values,
-                        redirect: true
+                    authenticate(data , () =>{
+                        setValues({
+                            ...values,
+                            redirect: true
+    
+                        });
+                    })
 
-                    });
+                    
 
                 }
             })

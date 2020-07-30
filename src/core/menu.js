@@ -19,7 +19,7 @@ const Menu = (props) =>
     (
          
         <nav id="menu" className="navbar navbar-default navbar-fixed-top bg-warning">
-             <a class="navbar-brand">BCOMM</a>
+             <a className="navbar-brand">BCOMM</a>
         <div className="container">
             <ul className="nav nav-tabs bg-secondary">
 
