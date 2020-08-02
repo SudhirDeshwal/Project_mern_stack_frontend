@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Layout from '../core/Layout';
 //import { API } from '../config';
 import "../styles.css";
+import { isAuthenticated } from '../auth/UserAuth' 
 
 const Singin = () => {
 
@@ -16,7 +17,8 @@ const Singin = () => {
             redirect: false
         })
 
-    const { email, password, loading, error, redirect } = values;
+    const { email, password, loading, error, redirect } = values; 
+    const { user } = isAuthenticated();
 
     //handle change in form
 
@@ -143,7 +145,11 @@ const Singin = () => {
 
         if (redirect) {
 
-            return <Redirect to="/"></Redirect>
+            if (user && user.role === 1) {
+                return <Redirect to="/admin/dashboard" />;
+            } else {
+                return <Redirect to="/user/dashboard" />;
+            }
         }
     }
 
