@@ -6,7 +6,6 @@ import Home from '../src/core/Home'
 
 
 
-
 const App = () => {
  
     return (

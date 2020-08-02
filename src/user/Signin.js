@@ -29,7 +29,7 @@ const Singin = () => {
             });
     }
 
-
+   //for local storage
     const authenticate = (data, next) => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('jwt', JSON.stringify(data));
