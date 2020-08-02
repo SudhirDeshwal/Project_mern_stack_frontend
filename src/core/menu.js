@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from "react";
 import { Link, withRouter } from 'react-router-dom'
 import "../styles.css";
-import {signout} from '../auth/UserAuth'
+import {signout , isAuthenticated} from '../auth/UserAuth'
 
 
 
@@ -21,7 +21,7 @@ const Menu = ({history}) =>
         <div>
          
         <nav id="menu" className="navbar navbar-default navbar-fixed-top bg-warning">
-             <a className="navbar-brand">MERCH</a>
+             <a className="navbar-brand">MRC</a>
         <div className="container">
             <ul className="nav nav-tabs bg-secondary">
 
@@ -30,6 +30,9 @@ const Menu = ({history}) =>
                         className="nav-link"style={isActive(history, '/')} to="/">Home</Link>
                 </li>
 
+
+                {!isAuthenticated() && (
+                      <Fragment>
                 <li className="nav-item">
                     <Link className="nav-link"
                         style={isActive(history, '/signin')} to="/signin">SignIn</Link>
@@ -39,7 +42,11 @@ const Menu = ({history}) =>
                     <Link className="nav-link"
                         style={isActive(history, '/signup')} to="/signup">SignUp</Link>
                 </li>
+                </Fragment>
+                )}
 
+                 {isAuthenticated() && (
+                     <Fragment>
                 <li className="nav-item">
                      <span
                         className="nav-link"
@@ -54,7 +61,8 @@ const Menu = ({history}) =>
                         Signout  
                     </span>
                 </li>
-                
+                </Fragment>
+                  )}
             </ul>
         </div>
 
