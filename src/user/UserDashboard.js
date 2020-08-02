@@ -5,21 +5,21 @@ import "../styles.css";
 
 const Dashboard = () => {
 
+     
 
 
-    
-    return (
+    return ( 
         <Layout
             title="Dashboard"
-            description={`Welcome ${name}!`}
+          //  description={`Welcome ${name}!`}
             className="container-fluid"
         >
             <div className="row">
-                <div className="col-3">{userLinks()}</div>
+                {/* <div className="col-3">{userLinks()}</div>
                 <div className="col-9">
                     {userInfo()}
                     {purchaseHistory(history)}
-                </div>
+                </div> */}
             </div>
         </Layout>
     );

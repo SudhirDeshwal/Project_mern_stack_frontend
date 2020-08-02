@@ -21,13 +21,23 @@ const Menu = ({history}) =>
         <div>
          
         <nav id="menu" className="navbar navbar-default navbar-fixed-top bg-warning">
-             <a className="navbar-brand">MRC</a>
+             <a className="navbar-brand">MRC</a> 
         <div className="container">
             <ul className="nav nav-tabs bg-secondary">
 
                 <li className="nav-item"> 
                     <Link
                         className="nav-link"style={isActive(history, '/')} to="/">Home</Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link
+                        className="nav-link"
+                        style={isActive(history, "/dashboard")}
+                        to="/dashboard"
+                    >
+                        Dashboard
+                    </Link>
                 </li>
 
 
