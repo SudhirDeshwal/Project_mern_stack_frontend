@@ -7,7 +7,7 @@ import "../styles.css";
 const Singin = () => {
 
     //Sign in state
-    const [values, setValues] = useState(
+    const [values, setValues] = useState( 
         {
             email: " ",
             password: "",
