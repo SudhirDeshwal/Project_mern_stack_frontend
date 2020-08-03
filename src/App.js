@@ -8,6 +8,7 @@ import Dashboard from '../src/user/UserDashboard'
 import AdminRoute from '../src/auth/AdminRoute'
 import AdminDasboard from '../src/user/AdminDasboard'
 import AddCategory from '../src/admin/AddCategory'
+import AddProduct from './admin/AddProduct'
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
           <PrivateRoute path="/user/dashboard" exact component={Dashboard}></PrivateRoute>
           <AdminRoute path="/admin/dashboard" exact component={AdminDasboard}></AdminRoute>
           <AdminRoute path="/create/category" exact component={AddCategory}></AdminRoute>
+          <AdminRoute path="/create/product" exact component={AddProduct}></AdminRoute>
        </Switch>
        </BrowserRouter>
 
