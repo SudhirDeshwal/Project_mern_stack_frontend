@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout'
 import {getProducts} from './CoreApicalls'
+import ProductCard from './ProductCard'
 
 const Home = () => {
 
@@ -28,7 +29,7 @@ const Home = () => {
             }
         });
     };
-    
+
     useEffect(() => {
         loadProductsByArrival();
         loadProductsBySell();
@@ -37,8 +38,27 @@ const Home = () => {
 return (
 
 <Layout title="Explore Books" discription="Buy your Fav books here!!!">
-Books here
-</Layout>
+
+         <h2 className="mb-4">New Arrivals</h2>
+            <div className="row">
+                {productsByArrival.map((product, i) => (
+                    <div key={i} className="col-4 mb-3">
+                        <ProductCard product={product} />
+                    </div>
+                ))}
+            </div>
+
+
+            <h2 className="mb-4">Best Sellers</h2>
+            <div className="row">
+                {productsBySell.map((product, i) => (
+                    <div key={i} className="col-4 mb-3">
+                        <ProductCard product={product} />
+                    </div>
+                ))}
+            </div>
+
+</Layout>  
 );
 
 }
