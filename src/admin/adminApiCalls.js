@@ -27,9 +27,20 @@ export const createProduct = (userId, token, product) => {
         body: product
     })
         .then(response => {
-            return response.json(); 
+            return response.json();  
         })
         .catch(err => {
             console.log(err);
         });
+};
+
+
+export const getCategories = () => {
+    return fetch(`http://localhost:8000/categories`, {
+        method: 'GET'
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
 };
