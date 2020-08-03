@@ -37,9 +37,9 @@ const Home = () => {
 
 return (
 
-<Layout title="Explore Books" discription="Buy your Fav books here!!!">
+<Layout title="Explore Books" discription="Buy your Fav books here!!!" className="container-fluid">
 
-         <h2 className="mb-4">New Arrivals</h2>
+         <h2 className="col-sm-6">New Arrivals</h2>
             <div className="row">
                 {productsByArrival.map((product, i) => (
                     <div key={i} className="col-4 mb-3">
