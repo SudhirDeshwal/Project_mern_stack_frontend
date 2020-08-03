@@ -36,7 +36,7 @@ export const createProduct = (userId, token, product) => {
 
 
 export const getCategories = () => {
-    return fetch(`http://localhost:8000/categories`, {
+    return fetch('http://localhost:8000/api/categories', {
         method: 'GET'
     })
         .then(response => {
