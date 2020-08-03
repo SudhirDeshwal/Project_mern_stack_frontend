@@ -3,6 +3,7 @@ import Layout from '../core/Layout'
 import "../styles.css"; 
 import { isAuthenticated } from '../auth/UserAuth'
 import { Link } from "react-router-dom";
+import { createCategory } from './adminApiCalls'
 
 
 const AddCategory = () => {
@@ -25,7 +26,7 @@ const AddCategory = () => {
         e.preventDefault();
         setError("");
         setSuccess(false);
-        make request to api to create category
+     //   make request to api to create category
         createCategory(user._id, token, { name }).then(data => {
             if (data.error) {
                 setError(data.error);
