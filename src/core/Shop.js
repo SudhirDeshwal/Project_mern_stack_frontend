@@ -4,11 +4,12 @@ import {getProducts} from './CoreApicalls'
 import "../styles.css";
 import Card from './Card'
 import {getCategories} from './CoreApicalls'
+import Checkbox from './Checkbox'
 
 
 const Shop = () => {
 
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState([]); 
     const [error, setError] = useState(false);
 
 
@@ -36,9 +37,10 @@ const Shop = () => {
 
        <div className="row">
            <div className="col-4">
-                  left side
-                  {JSON.stringify(categories)}
-
+           <h2 className="mb-4">Filter by Categories</h2>
+               <ul>
+                 <Checkbox categories={categories}></Checkbox>
+                </ul>
            </div>
 
            <div className="col-4">
