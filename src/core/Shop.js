@@ -5,6 +5,7 @@ import "../styles.css";
 import Card from './Card'
 import {getCategories} from './CoreApicalls'
 import Checkbox from './Checkbox'
+import {prices} from './Fixedprice'
 
 
 const Shop = () => {
