@@ -1,6 +1,17 @@
 /**
  * border radius
  */
+ .card{
+   
+    box-shadow: 0px 0px 5px 0px #000;
+  }
+
+  .embed-responsive .card-img-top {
+    object-fit: cover;
+}
+
+    
+
 .form-container{
     
     padding: 30px;

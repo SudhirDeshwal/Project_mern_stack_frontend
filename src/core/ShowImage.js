@@ -1,14 +1,16 @@
 import React from "react";
+import "../styles.css";
 
 const ShowImage = ({ item, url }) => (
-    <div className="product-img">
-        <img
+    <div className="card-img-top img-fluid">
+        
+        <img 
             src={`https://merchsid.herokuapp.com/api/${url}/photo/${item._id}`}
             alt={item.name}
             className="mb-3"
-            style={{ maxHeight: "100%", maxWidth: "100%" }}
-        />
+            style={{ maxHeight: "100%", maxWidth: "100%" }} />
     </div>
+    
 );
 
-export default ShowImage;
+export default ShowImage; 

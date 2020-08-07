@@ -160,7 +160,7 @@ const Singin = () => {
     return (
 
         <Layout
-            title="Sign up here"
+            title="Sign in here"
             discription="Create an Account"
             className="container col-md-8 offset-md-2">
             {showloading()}

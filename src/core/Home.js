@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout'
 import {getProducts} from './CoreApicalls'
-import ProductCard from './ProductCard'
+import "../styles.css";
+import Card from './Card'
 
 const Home = () => {
 
@@ -39,24 +40,27 @@ return (
 
 <Layout title="Explore Books" discription="Buy your Fav books here!!!" className="container-fluid">
 
-         <h2 className="col-sm-6">New Arrivals</h2>
+       
+         <h2 className="mb-4">New Arrivals</h2>
             <div className="row">
-                {productsByArrival.map((product, i) => (
-                    <div key={i} className="col-4 mb-3">
-                        <ProductCard product={product} />
-                    </div>
-                ))}
+            {productsByArrival.map((product, i) => (
+
+                 <Card key={i} product={product}></Card>
+                      ))}
             </div>
 
 
-            <h2 className="mb-4">Best Sellers</h2>
-            <div className="row">
-                {productsBySell.map((product, i) => (
-                    <div key={i} className="col-4 mb-3">
-                        <ProductCard product={product} />
-                    </div>
-                ))}
+
+        <h2 className="mb-4">Best Sellers</h2>
+        <div className="row">
+            {productsBySell.map((product, i) => (
+
+                <Card key={i} product={product}></Card>
+            ))}
+
             </div>
+
+        
 
 </Layout>  
 );
