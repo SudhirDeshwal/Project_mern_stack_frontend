@@ -1,5 +1,5 @@
 export const createCategory = (userId, token, category) => {
-    return fetch(`http://localhost:8000/api/category/create/${userId}`, {
+    return fetch(`https://merchsid.herokuapp.com/api/category/create/${userId}`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -18,7 +18,7 @@ export const createCategory = (userId, token, category) => {
 
 
 export const createProduct = (userId, token, product) => {
-    return fetch(`http://localhost:8000/api/product/create/${userId}`, {
+    return fetch(`https://merchsid.herokuapp.com/api/product/create/${userId}`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -36,7 +36,7 @@ export const createProduct = (userId, token, product) => {
 
 
 export const getCategories = () => {
-    return fetch('http://localhost:8000/api/categories', {
+    return fetch('https://merchsid.herokuapp.com/api/categories', {
         method: 'GET'
     })
         .then(response => {

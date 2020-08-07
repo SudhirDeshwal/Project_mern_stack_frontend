@@ -1,5 +1,5 @@
 export const getProducts = sortBy => {
-    return fetch(`http://localhost:8000/api/products?sortBy=${sortBy}&order=desc&limit=15`, {
+    return fetch(`https://merchsid.herokuapp.com/api/products?sortBy=${sortBy}&order=desc&limit=15`, {
         method: "GET"
     })
         .then(response => {

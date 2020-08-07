@@ -33,7 +33,7 @@ const Singup = () => {
     const signup = user => {
 
         console.log(user);
-        return fetch('http://localhost:8000/api/signup', {
+        return fetch('https://merchsid.herokuapp.com/api/signup', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

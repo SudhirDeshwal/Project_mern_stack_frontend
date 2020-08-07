@@ -3,7 +3,7 @@ exports.signout = next => {
     if (typeof window !== 'undefined') {
         localStorage.removeItem('jwt');
         next();
-        return fetch('http://localhost:8000/api/signout', {
+        return fetch('https://merchsid.herokuapp.com/api/signout', {
             method: 'GET'
         })
             .then(response => {
