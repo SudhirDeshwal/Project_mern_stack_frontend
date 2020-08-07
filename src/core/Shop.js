@@ -113,7 +113,7 @@ const Shop = () => {
 
 <Layout title="Shop Page" discription="Buy your Fav books here!!!" className="container-fluid">
 
-<div className="row">
+               <div className="row">
                 <div className="col-4">
                     <h4>Filter by categories</h4>
                     <ul>
@@ -140,9 +140,9 @@ const Shop = () => {
                     <h2 className="mb-4">Products</h2>
                     <div className="row">
                         {filteredResults.map((product, i) => (
-                            <div key={i} className="col-4 mb-3">
-                                <Card product={product} />
-                            </div>
+                            
+                                <Card key={i} product={product} />
+                            
                         ))}
                     </div>
                     <hr />
