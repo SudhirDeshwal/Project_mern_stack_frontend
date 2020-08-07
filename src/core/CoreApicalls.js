@@ -25,7 +25,7 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
         skip,
         filters
     };
-    return fetch(`https://merchsid.herokuapp.com/api/products/by/search`, {
+    return fetch(`http://localhost:4000/api/products/by/search`, { 
         method: "POST",
         headers: {
             Accept: "application/json",

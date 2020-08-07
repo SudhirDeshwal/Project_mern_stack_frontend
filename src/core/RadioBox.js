@@ -22,4 +22,4 @@ const RadioBox = ({ prices, handleFilters }) => {
     ));
 };
 
-export default RadioBox;
+export default RadioBox;  
