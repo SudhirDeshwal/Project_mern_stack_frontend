@@ -3,9 +3,10 @@ import Layout from './Layout'
 import {getProducts} from './CoreApicalls'
 import "../styles.css";
 import Card from './Card'
-import {getCategories} from './CoreApicalls'
+import {getCategories , getFilteredProducts } from './CoreApicalls'
 import Checkbox from './Checkbox'
 import {prices} from './Fixedprice'
+import RadioBox from './RadioBox'
 
 
 const Shop = () => {
