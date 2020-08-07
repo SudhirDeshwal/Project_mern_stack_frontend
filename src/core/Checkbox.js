@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Checkbox = ({ categories}) => {
+const Checkbox = ({ categories , handleFilters}) => {
     
 
     const [checked, setCheked] = useState([]);
@@ -19,14 +19,14 @@ const Checkbox = ({ categories}) => {
         }
         console.log(newCheckedCategoryId);
         setCheked(newCheckedCategoryId);
-      //  handleFilters(newCheckedCategoryId);
+       handleFilters(newCheckedCategoryId);
     };
 
     return categories.map((c, i) => (
         <li key={i} className="list-unstyled">
             <input
                  onChange={handleToggle(c._id)}
-                // value={checked.indexOf(c._id === -1)}
+                 value={checked.indexOf(c._id === -1)}
                 type="checkbox"
                 className="form-check-input"
             />

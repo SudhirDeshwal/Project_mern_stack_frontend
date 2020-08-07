@@ -9,6 +9,10 @@ import Checkbox from './Checkbox'
 
 const Shop = () => {
 
+    const [myFilters, setMyFilters] = useState({
+        filters: { category: [], price: [] }
+    });
+
     const [categories, setCategories] = useState([]); 
     const [error, setError] = useState(false);
 
@@ -29,7 +33,18 @@ const Shop = () => {
        
     }, []);
 
+    const handleFilters = (filters, filterBy) => {
+        // console.log("SHOP", filters, filterBy);
+        const newFilters = { ...myFilters };
+        newFilters.filters[filterBy] = filters;
 
+        if (filterBy === "price") {
+            let priceValues = handlePrice(filters);
+            newFilters.filters[filterBy] = priceValues;
+        }
+      //  loadFilteredResults(myFilters.filters);
+        setMyFilters(newFilters);
+    };
 
   return(
 

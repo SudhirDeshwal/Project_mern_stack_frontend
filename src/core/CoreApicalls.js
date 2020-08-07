@@ -10,7 +10,7 @@ export const getProducts = sortBy => {
 
 
 export const getCategories = () => {
-    return fetch('https://merchsid.herokuapp.com/api/categories', {
+    return fetch('https://merchsid.herokuapp.com/api/categories', { 
         method: 'GET'
     })
         .then(response => {
