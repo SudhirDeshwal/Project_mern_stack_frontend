@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link, withRouter } from 'react-router-dom'
 import "../styles.css";
 import {signout , isAuthenticated} from '../auth/UserAuth'
+import {itemTotal} from './Carthelpers'
 
 
 
@@ -33,8 +34,17 @@ const Menu = ({history}) =>
                     <Link
                         className="nav-link"style={isActive(history, '/shop')} to="/shop">Shop</Link>
                 </li>
+                <li className="nav-item"> 
+                    <Link
+                        className="nav-link"style={isActive(history, '/cart')} to="/cart">
+                             Cart{" "}
+                    <sup>
+                        <small className="cart-badge">{itemTotal()}</small>
+                    </sup>
+                            </Link>
+                </li>
 
-                {isAuthenticated() && isAuthenticated().user.role === 0 && (
+                {isAuthenticated() && isAuthenticated().user.role === 0 && ( 
                 <li className="nav-item">
                     <Link
                         className="nav-link"

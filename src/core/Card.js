@@ -14,7 +14,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
 
         const addToCart = () => {
          console.log('added');
-       addItem(product, setRedirect(true));
+       addItem(product, setRedirect(true)); 
             };
 
             const shouldRedirect = redirect => {
