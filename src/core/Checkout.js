@@ -13,10 +13,28 @@ const Checkout = ({products}) => {
         }, 0);
     };
 
+    const showCheckout = () => {
+
+        return isAuthenticated() ? (
+            
+            <button className="btn btn-success">Proceed to Payments</button>
+        
+
+        ) : (
+
+           <Link to="/signin">
+               <button className="btn btn-primary">Sign in to checkout</button>
+           </Link>
+        )
+        
+    };
+
     return (
         <div>
-         
          <h2>Total: ${getTotal()}</h2>
+         {showCheckout()}
+
+         
         </div>
     );
 }
