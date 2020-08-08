@@ -3,9 +3,25 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage'
 import "../styles.css";
 import moment from 'moment'
+import {addItem} from './Carthelpers'
 
 const Card = ({product , showViewProductButton = true , showAddToCartButton = true}) => {
 
+
+
+  const [redirect, setRedirect] = useState(false);
+
+
+        const addToCart = () => {
+         console.log('added');
+       addItem(product, setRedirect(true));
+            };
+
+            const shouldRedirect = redirect => {
+              if (redirect) {
+                return <Redirect to="/cart" />;
+              }
+            };
 
     const showViewButton = showViewProductButton => {
         return (
@@ -20,7 +36,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
       const showAddToCartBtn = showAddToCartButton => {
         return (
           showAddToCartButton && (
-            <button className="btn btn-outline-warning mt-2 mb-2 card-btn-1  ">
+            <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2 card-btn-1  "> 
               Add to cart
             </button>
           )
@@ -42,7 +58,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
          <div className="card">
                 <div className="card-header name">{product.name}</div>
                 <div className="card-body">
-
+                {shouldRedirect(redirect)}
                 
                     <ShowImage item={product} url='product'></ShowImage>
                 
