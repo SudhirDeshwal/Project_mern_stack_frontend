@@ -43,7 +43,7 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
 
 
 export const read = productId => {
-    return fetch(`https://merchsid.herokuapp.com/api/product/${productId}`, {
+    return fetch(`http://localhost:4000/api/product/${productId}`, {
         method: "GET"
     })
         .then(response => {
