@@ -19,7 +19,7 @@ const Card = ({product}) => {
 
                            <p>{product.description}</p>
                            <p>${product.price}</p>
-                           <Link to="/">
+                           <Link to={`/product/${product._id}`}>
                <button className='btn btn-outline-primary mt-2 mb-2 mr-4'> 
                  View Product
                 </button>
