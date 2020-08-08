@@ -6,13 +6,14 @@ import moment from 'moment'
 import {addItem , updateItem , removeItem} from './Carthelpers'
 
 const Card = ({product , showViewProductButton = true , showAddToCartButton = true,
-  cartUpdate = false , showRemoveProductButton = false }) => {
+  cartUpdate = false , showRemoveProductButton = false ,setRun = f => f,
+  run = undefined }) => {
 
 
 
   const [redirect, setRedirect] = useState(false);
   const [count, setCount] = useState(product.count);   
-
+ 
 
         const addToCart = () => {
          console.log('added');
@@ -50,7 +51,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
           showRemoveProductButton && (
             <button
               onClick={() => { removeItem(product._id);
-               // setRun(!run); // run useEffect in parent Cart
+                setRun(!run); // run useEffect in parent Cart
               }}
               className="btn btn-outline-danger mt-2 mb-2"
             >
@@ -76,7 +77,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
       };
 
       const handleChange = productId => event => {
-       // setRun(!run); // run useEffect in parent Cart
+        setRun(!run); // run useEffect in parent Cart
         setCount(event.target.value < 1 ? 1 : event.target.value);
         if (event.target.value >= 1) {
           updateItem(productId, event.target.value);

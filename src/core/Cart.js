@@ -8,16 +8,17 @@ import Card from './Card';
 const Cart = () => { 
 
     const [items, setItems] = useState([]);
+    const [run, setRun] = useState(false);
 
 
  useEffect(() => {
         setItems(getCart());
-    }, []);
+    }, [run]);
 
-    const showItems = items => {
+    const showItems = items => { 
         return (
             <div>
-                <h2>Your cart has {`${items.length}`} items</h2>
+                <h2>Your cart has {`${items.length}`} items</h2> 
                 <hr />
                 {items.map((product, i) => (
                     <Card
@@ -26,8 +27,8 @@ const Cart = () => {
                         showAddToCartButton={false}
                          cartUpdate={true}
                         showRemoveProductButton={true}
-                        // setRun={setRun}
-                        // run={run}
+                        setRun={setRun}
+                        run={run}
                     />
                 ))}
             </div>
