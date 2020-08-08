@@ -3,15 +3,15 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage'
 import "../styles.css";
 import moment from 'moment'
-import {addItem , updateItem} from './Carthelpers'
+import {addItem , updateItem , removeItem} from './Carthelpers'
 
 const Card = ({product , showViewProductButton = true , showAddToCartButton = true,
-  cartUpdate = false}) => {
+  cartUpdate = false , showRemoveProductButton = false }) => {
 
 
 
   const [redirect, setRedirect] = useState(false);
-  const [count, setCount] = useState(product.count);  
+  const [count, setCount] = useState(product.count);   
 
 
         const addToCart = () => {
@@ -40,6 +40,21 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
           showAddToCartButton && (
             <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2 card-btn-1  "> 
               Add to cart
+            </button>
+          )
+        );
+      };
+
+      const showRemoveButton = showRemoveProductButton => {
+        return (
+          showRemoveProductButton && (
+            <button
+              onClick={() => { removeItem(product._id);
+               // setRun(!run); // run useEffect in parent Cart
+              }}
+              className="btn btn-outline-danger mt-2 mb-2"
+            >
+              Remove Product
             </button>
           )
         );
@@ -96,6 +111,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
                            <br></br>
                            {showViewButton(showViewProductButton)} 
                            {showAddToCartBtn(showAddToCartButton)}
+                           {showRemoveButton(showRemoveProductButton)}
                            {showCartUpdateOptions(cartUpdate)}
             
              
