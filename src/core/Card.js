@@ -5,7 +5,8 @@ import "../styles.css";
 import moment from 'moment'
 import {addItem} from './Carthelpers'
 
-const Card = ({product , showViewProductButton = true , showAddToCartButton = true}) => {
+const Card = ({product , showViewProductButton = true , showAddToCartButton = true,
+  cartUpdate = false}) => {
 
 
 
@@ -43,6 +44,22 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
         );
       };
 
+      const showCartUpdateOptions = cartUpdate => {
+        return (
+          cartUpdate && (
+            <div>
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Adjust Quantity</span>
+                </div>
+                incre/decre
+                {/* <input type="number" className="form-control" value={count} onChange={handleChange(product._id)} /> */}
+              </div>
+            </div>
+          )
+        );
+      };
+
       const showStock = quantity => {
     return quantity > 0 ? (
       <span className="badge badge-primary badge-pill">In Stock </span>
@@ -71,6 +88,7 @@ const Card = ({product , showViewProductButton = true , showAddToCartButton = tr
                            <br></br>
                            {showViewButton(showViewProductButton)} 
                            {showAddToCartBtn(showAddToCartButton)}
+                           {showCartUpdateOptions(cartUpdate)}
             
              
          </div>
