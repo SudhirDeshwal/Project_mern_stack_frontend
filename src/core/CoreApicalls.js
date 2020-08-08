@@ -43,7 +43,17 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
 
 
 export const read = productId => {
-    return fetch(`http://localhost:4000/api/product/${productId}`, {
+    return fetch(`https://merchsid.herokuapp.com/api/product/${productId}`, { 
+        method: "GET"
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const listRelated = productId => {
+    return fetch(`https://merchsid.herokuapp.com/api/products/related/${productId}`, {
         method: "GET"
     })
         .then(response => {
