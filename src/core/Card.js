@@ -3,12 +3,24 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage'
 import "../styles.css";
 
-const Card = ({product}) => {
+const Card = ({product , showViewProductButton = true}) => {
 
 
-    return( 
+    const showViewButton = showViewProductButton => {
+        return (
+          showViewProductButton && (
+            <Link to={`/product/${product._id}`} className="mr-2">
+              <button className="btn btn-outline-primary mt-2 mb-2 card-btn-1">View Product</button>
+            </Link>
+          )
+        );
+      };
+
+
+    return(  
+
          
-        <div className="col-2 mb-3">
+        // <div className="col-2 mb-3">
          <div className="card">
                 <div className="card-header">{product.name}</div>
                 <div className="card-body">
@@ -19,16 +31,14 @@ const Card = ({product}) => {
 
                            <p>{product.description}</p>
                            <p>${product.price}</p>
-                           <Link to={`/product/${product._id}`}>
-               <button className='btn btn-outline-primary mt-2 mb-2 mr-4'> 
-                 View Product
-                </button>
-             </Link>
+                           
+                           {showViewButton(showViewProductButton)}
+            
              <button className='btn btn-outline-warning mt-2 mb-2'>
                   Add to Cart </button> 
                 </div>
          </div>
-        </div> 
+        // </div> 
     )
 }
 

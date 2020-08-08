@@ -44,8 +44,9 @@ return (
          <h2 className="mb-4">New Arrivals</h2>
             <div className="row">
             {productsByArrival.map((product, i) => (
-
-                 <Card key={i} product={product}></Card>
+                   <div key={i} className="col-2 mb-3">
+                 <Card  product={product}></Card>
+                      </div>
                       ))}
             </div>
 
