@@ -13,6 +13,7 @@ import Shop from './core/Shop'
 import Product from './core/Product'
 import Cart from './core/Cart'
 import ManageProducts from './admin/ManageProduct'
+import UpdateProduct from './admin/UpdateProducts'
 
 
 
@@ -34,6 +35,7 @@ const App = () => {
           <AdminRoute path="/create/category" exact component={AddCategory}></AdminRoute>
           <AdminRoute path="/create/product" exact component={AddProduct}></AdminRoute>
           <AdminRoute path="/admin/products" exact component={ManageProducts}></AdminRoute>
+          <AdminRoute path="/admin/product/update/:productId" exact component={UpdateProduct}></AdminRoute>
           
        </Switch>
        </BrowserRouter>

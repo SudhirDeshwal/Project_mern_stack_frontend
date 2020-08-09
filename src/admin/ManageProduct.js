@@ -70,7 +70,7 @@ const ManageProducts = () => {
                                 </span>
                             </li>
                         ))}
-                    </ul>
+                    </ul> 
                     <br />
                 </div>
             </div>

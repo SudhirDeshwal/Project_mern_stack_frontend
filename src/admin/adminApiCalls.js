@@ -58,7 +58,7 @@ export const getProducts = () => {
 };
 
 export const deleteProduct = (productId, userId, token) => {
-    return fetch(`https://merchsid.herokuapp.com/api/product/${productId}/${userId}`, {
+    return fetch(`https://merchsid.herokuapp.com/api/product/${productId}/${userId}`, { 
         method: 'DELETE',
         headers: {
             Accept: 'application/json',
