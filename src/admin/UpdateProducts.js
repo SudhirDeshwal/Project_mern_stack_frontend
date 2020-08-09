@@ -2,7 +2,7 @@ import React, { useState , useEffect } from 'react';
 import Layout from '../core/Layout'
 import "../styles.css"; 
 import { isAuthenticated } from '../auth/UserAuth'
-import { Link , Redirect} from "react-router-dom";
+import { Redirect} from "react-router-dom";
 import { getProduct , getCategories , updateProduct} from './adminApiCalls'
 
 const UpdateProduct = ({match}) => {
@@ -29,8 +29,6 @@ const UpdateProduct = ({match}) => {
         description,
         price,
         categories,
-        category,
-        shipping,
         quantity,
         loading,
         error,
