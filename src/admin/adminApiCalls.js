@@ -47,14 +47,6 @@ export const getCategories = () => {
 
 
 
-/**
- * to perform crud on product
- * get all products
- * get a single product
- * update single product
- * delete single product
- */
-
 export const getProducts = () => {
     return fetch(`https://merchsid.herokuapp.com/api/products?limit=undefined`, {
         method: 'GET'
@@ -87,7 +79,7 @@ export const getProduct = productId => {
         .then(response => {
             return response.json();
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)); 
 };
 
 export const updateProduct = (productId, userId, token, product) => {
@@ -104,3 +96,8 @@ export const updateProduct = (productId, userId, token, product) => {
         })
         .catch(err => console.log(err));
 };
+
+
+
+
+

@@ -25,7 +25,7 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
         skip,
         filters
     };
-    return fetch(`http://localhost:4000/api/products/by/search`, { 
+    return fetch(`https://merchsid.herokuapp.com/api/products/by/search`, { 
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -64,7 +64,7 @@ export const listRelated = productId => {
 
 
 export const getBraintreeClientToken = (userId, token) => {
-    return fetch(`http://localhost:4000/api/braintree/getToken/${userId}`, {
+    return fetch(`https://merchsid.herokuapp.com/api/braintree/getToken/${userId}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
