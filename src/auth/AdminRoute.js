@@ -3,8 +3,8 @@ import { Route, Redirect } from "react-router-dom";
 import { isAuthenticated } from './UserAuth';
 
 
-
-const AdminRoute = ({ component: Component, ...rest }) => (
+//for signed user but with role 1 or admin
+const AdminRoute = ({ component: Component, ...rest }) => ( 
     <Route
         {...rest}
         render={props =>
