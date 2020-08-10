@@ -13,6 +13,7 @@ const ManageProducts = () => {
 
     const { user, token } = isAuthenticated(); 
 
+    //tO Load all products
     const loadProducts = () => {
         getProducts().then(data => {
             if (data.error) {
@@ -23,6 +24,8 @@ const ManageProducts = () => {
         });
     };
 
+
+    //to delete 
     const destroy = productId => {
         deleteProduct(productId, user._id, token).then(data => {
             if (data.error) {
@@ -75,7 +78,7 @@ const ManageProducts = () => {
                 </div>
             </div>
             
-        </Layout>
+        </Layout> 
     );
 };
 

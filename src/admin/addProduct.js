@@ -1,9 +1,9 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout'
-import "../styles.css"; 
+import "../styles.css";
 import { isAuthenticated } from '../auth/UserAuth'
 import { Link } from "react-router-dom";
-import { createProduct , getCategories } from './adminApiCalls'
+import { createProduct, getCategories } from './adminApiCalls'
 
 const AddProduct = () => {
 
@@ -56,7 +56,7 @@ const AddProduct = () => {
 
 
     useEffect(() => {
-       init()
+        init()
     }, []);
 
     const handleChange = name => event => {
@@ -121,7 +121,7 @@ const AddProduct = () => {
                                 {c.name}
                             </option>
                         ))}
-                     
+
 
                 </select>
             </div>
@@ -141,7 +141,7 @@ const AddProduct = () => {
             </div>
 
             <button className="btn btn-outline-primary">Create Product</button>
-        </form> 
+        </form>
     );
 
 
@@ -182,10 +182,10 @@ const AddProduct = () => {
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2">
-                {showLoading()}
+                    {showLoading()}
                     {showSuccess()}
                     {showError()}
-                {newPostForm()}
+                    {newPostForm()}
                 </div>
             </div>
         </Layout>

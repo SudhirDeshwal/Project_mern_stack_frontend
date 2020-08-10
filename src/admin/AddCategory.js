@@ -5,7 +5,7 @@ import { isAuthenticated } from '../auth/UserAuth'
 import { Link } from "react-router-dom";
 import { createCategory } from './adminApiCalls'
 
-
+//To create new Category
 const AddCategory = () => {
     const [name, setName] = useState("");
     const [error, setError] = useState(false);
@@ -36,7 +36,7 @@ const AddCategory = () => {
             }
         });
     };
-
+//Input
       const newCategoryFom = () => (
         <form onSubmit={clickSubmit}>
             <div className="form-group">
@@ -88,7 +88,7 @@ const AddCategory = () => {
                     {goBack()}
                 </div>
             </div>
-        </Layout>
+        </Layout> 
     );
 
 

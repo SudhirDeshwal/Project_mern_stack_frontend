@@ -1,3 +1,4 @@
+//to create category
 export const createCategory = (userId, token, category) => {
     return fetch(`https://merchsid.herokuapp.com/api/category/create/${userId}`, {
         method: 'POST',
@@ -16,7 +17,7 @@ export const createCategory = (userId, token, category) => {
         });   
 };
 
-
+//to get create product
 export const createProduct = (userId, token, product) => {
     return fetch(`https://merchsid.herokuapp.com/api/product/create/${userId}`, {
         method: 'POST',
@@ -34,7 +35,7 @@ export const createProduct = (userId, token, product) => {
         });
 };
 
-
+//to get categories
 export const getCategories = () => {
     return fetch('https://merchsid.herokuapp.com/api/categories', {
         method: 'GET'
@@ -45,7 +46,13 @@ export const getCategories = () => {
         .catch(err => console.log(err));
 };
 
-
+/**
+ * Below functions to perform crud on product
+ * get all products
+ * get a single product
+ * update single product
+ * delete single product
+ */
 
 export const getProducts = () => {
     return fetch(`https://merchsid.herokuapp.com/api/products?limit=undefined`, {
@@ -94,7 +101,7 @@ export const updateProduct = (productId, userId, token, product) => {
         .then(response => {
             return response.json();
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log(err)); 
 };
 
 
