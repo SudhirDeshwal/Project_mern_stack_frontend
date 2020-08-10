@@ -3,30 +3,20 @@ import { Link } from 'react-router-dom';
 import Layout from '../core/Layout';
 //import { API } from '../config';
 
-const Singup = () => {
+const Signup = () => {
+    const [values, setValues] = useState({
+        name: '',
+        email: '',
+        password: '',
+        error: '',
+        success: false
+    });
 
-    //Sign up state
-    const [values, setValues] = useState(
-        {
-            name: " ",
-            email: " ",
-            password: "",
-            error: false,
-            success: false
-        })
-
-    const { name, email, password, success, error } = values
-
-    //handle change in form
+    const { name, email, password, success, error } = values;
 
     const handleChange = name => event => {
-        setValues(
-            {
-                ...values,
-                error: false,
-                [name]: event.target.value
-            });
-    }
+        setValues({ ...values, error: false, [name]: event.target.value });
+    };
 
 
     //passing state data to backend db
@@ -38,7 +28,6 @@ const Singup = () => {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-
 
             },
             body: JSON.stringify(user)
@@ -55,34 +44,24 @@ const Singup = () => {
 
     //handle submit and check error befor passed it to sign up function
 
-    const clickSubmit = (event) => {
-
-        event.preventDefault()
-        signup({ name: name, email: email, password: password })
-            .then(data => {
-                if (data.error) {
-
-                    setValues({
-                        ...values,
-                        error: data.error,
-                        success: false
-                    })
-                }
-                else {
-
-                    setValues({
-                        ...values,
-                        name: "",
-                        email: "",
-                        password: "",
-                        error: '',
-                        success: true
-
-                    })
-
-                }
-            })
-    }
+    const clickSubmit = event => {
+        event.preventDefault();
+        setValues({ ...values, error: false });
+        signup({ name, email, password }).then(data => {
+            if (data.error) {
+                setValues({ ...values, error: data.error, success: false });
+            } else {
+                setValues({
+                    ...values,
+                    name: '',
+                    email: '',
+                    password: '',
+                    error: '',
+                    success: true 
+                });
+            }
+        });
+    };
 
     //User Sign up
     const Signupform = () => (
@@ -113,7 +92,7 @@ const Singup = () => {
 
                 </form>
             </section>
-        </section>
+        </section> 
     )
 
     const showError = () => (
@@ -127,7 +106,6 @@ const Singup = () => {
             New account is created. Please <Link to="/signin">Signin</Link>
         </div>
     );
-
 
     return (
 
@@ -144,6 +122,4 @@ const Singup = () => {
     );
 };
 
-
-
-export default Singup;
+export default Signup;
