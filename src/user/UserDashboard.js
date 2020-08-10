@@ -36,11 +36,6 @@ const Dashboard = () => {
                             My Cart
                         </Link>
                     </li>
-                    <li className="list-group-item">
-                        <Link className="nav-link" to="/profile">
-                            Update Profile
-                        </Link>
-                    </li>
                 </ul>
             </div>
         );
