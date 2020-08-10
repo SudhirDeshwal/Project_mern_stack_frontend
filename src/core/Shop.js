@@ -111,7 +111,7 @@ const Shop = () => {
 
     return (
 
-        <Layout title="Shop Page" discription="Buy your Fav books here!!!" className="container-fluid">
+        <Layout title="Shop Page" discription="Buy books here as per filters and categories" className="container-fluid">
 
             <div className="row">
                 <div className="col-4">
