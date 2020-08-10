@@ -62,17 +62,30 @@ Email: deshwalsudhir07@gmail.com
 Server Website Deploment is done at https://merchsid.herokuapp.com/
 Front End Website Deploment is done at https://booklibs.herokuapp.com/
 
-## List of Main pages of Website
+## List of Main pages of Website with URLS :
 ### `1.Login`
+Sign in:  https://booklibs.herokuapp.com/signin
 ### `2.Sign up`
+Sign up: https://booklibs.herokuapp.com/signup 
 ### `3.Home`
+Home : https://booklibs.herokuapp.com/
 ### `4.Shop`
+Shop:  https://booklibs.herokuapp.com/shop 
 ### `5.Admin Dashboard`
+Admin Dashboard : https://booklibs.herokuapp.com/admin/dashboard (only admin)
 ### `6.New Category`
+New Category: https://booklibs.herokuapp.com/create/category (Only admin)
 ### `7.New Product`
+New Product : https://booklibs.herokuapp.com/create/product (Only admin)
 ### `8.Update Product`
+Update Products:  https://booklibs.herokuapp.com/admin/product/update/:productId (Only admin)
 ### `9.Manage Product`
+Manage Products : https://booklibs.herokuapp.com/admin/products (Only admin) 
 ### `10.User Dashboard`
+User Dashboard: https://booklibs.herokuapp.com/user/dashboard (only signed) 
 ### `11.View Cart`
+Cart: https://booklibs.herokuapp.com/cart 
 ### `12.View Single Product`
-### `13.Payemnt Drop in`
+View Single Product : https://booklibs.herokuapp.com/product/:productId 
+### `13.Payment Drop in`
+Payment : https://booklibs.herokuapp.com/cart (only signed and products in cart )
