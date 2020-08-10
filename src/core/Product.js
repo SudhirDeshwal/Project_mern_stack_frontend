@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout';
 import Card from './Card';
-import { read , listRelated } from './CoreApicalls';
+import { read, listRelated } from './CoreApicalls';
 
 const Product = props => {
 
@@ -9,14 +9,14 @@ const Product = props => {
     const [relatedProduct, setRelatedProduct] = useState([]);
     const [error, setError] = useState(false);
 
-
+//view signle product
     const loadSingleProduct = productId => {
         read(productId).then(data => {
             if (data.error) {
                 setError(data.error);
             } else {
                 setProduct(data);
-               // fetch related products
+                // fetch related products
                 listRelated(data._id).then(data => {
                     if (data.error) {
                         setError(data.error);
@@ -27,26 +27,26 @@ const Product = props => {
             }
         });
     };
-          
+
     useEffect(() => {
         const productId = props.match.params.productId;
-        loadSingleProduct(productId); 
+        loadSingleProduct(productId);
     }, [props]);
 
 
-    return (  
+    return (
 
-<Layout
-             title={product && product.name} 
-             discription={product && product.description && product.description.substring(0, 100)}
-             className="container-fluid"
+        <Layout
+            title={product && product.name}
+            discription={product && product.description && product.description.substring(0, 100)}
+            className="container-fluid"
         >
             <div className="row">
                 <div className="col-8 mb-3">
-                {product && product.description && <Card product={product} showViewProductButton={false} />}
+                    {product && product.description && <Card product={product} showViewProductButton={false} />}
                 </div>
 
-                
+
                 <div className="col-4">
                     <h4>Related products</h4>
                     {relatedProduct.map((p, i) => (
@@ -55,10 +55,10 @@ const Product = props => {
                         </div>
                     ))}
                 </div>
-            
+
             </div>
 
-        
+
         </Layout>
 
     )

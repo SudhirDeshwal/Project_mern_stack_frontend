@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles.css";
-
+//to show image in card view
 const ShowImage = ({ item, url }) => (
     <div className="card-img-top img-fluid">
         

@@ -1,3 +1,4 @@
+//To get all proudcts with sort and order and limit
 export const getProducts = sortBy => {
     return fetch(`https://merchsid.herokuapp.com/api/products?sortBy=${sortBy}&order=desc&limit=15`, {
         method: "GET"
@@ -8,9 +9,9 @@ export const getProducts = sortBy => {
         .catch(err => console.log(err)); 
 }; 
 
-
+//to get categories
 export const getCategories = () => {
-    return fetch('https://merchsid.herokuapp.com/api/categories', { 
+    return fetch('https://merchsid.herokuapp.com/api/categories', {  
         method: 'GET'
     })
         .then(response => {
@@ -18,7 +19,7 @@ export const getCategories = () => {
         })
         .catch(err => console.log(err));
 };
-
+//filter products
 export const getFilteredProducts = (skip, limit, filters = {}) => {
     const data = {
         limit,
@@ -41,7 +42,7 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
         });
 };
 
-
+//read product by id
 export const read = productId => {
     return fetch(`https://merchsid.herokuapp.com/api/product/${productId}`, { 
         method: "GET"
@@ -51,7 +52,7 @@ export const read = productId => {
         })
         .catch(err => console.log(err));
 };
-
+//get all product with similar category
 export const listRelated = productId => {
     return fetch(`https://merchsid.herokuapp.com/api/products/related/${productId}`, {
         method: "GET"
@@ -62,7 +63,7 @@ export const listRelated = productId => {
         .catch(err => console.log(err));
 };
 
-
+//to get token from brain treee api
 export const getBraintreeClientToken = (userId, token) => {
     return fetch(`https://merchsid.herokuapp.com/api/braintree/getToken/${userId}`, {
         method: "GET",

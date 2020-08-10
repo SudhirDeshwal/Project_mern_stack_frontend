@@ -1,11 +1,11 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout'
-import "../styles.css"; 
+import "../styles.css";
 import { isAuthenticated } from '../auth/UserAuth'
-import { Redirect} from "react-router-dom";
-import { getProduct , getCategories , updateProduct} from './adminApiCalls'
+import { Redirect } from "react-router-dom";
+import { getProduct, getCategories, updateProduct } from './adminApiCalls'
 
-const UpdateProduct = ({match}) => {
+const UpdateProduct = ({ match }) => {
 
     const [values, setValues] = useState({
         name: '',
@@ -68,7 +68,7 @@ const UpdateProduct = ({match}) => {
                 setValues({ ...values, error: data.error });
             } else {
                 setValues({
-                   
+
                     categories: data,
                     formData: new FormData()
                 });
@@ -91,7 +91,7 @@ const UpdateProduct = ({match}) => {
         event.preventDefault();
         setValues({ ...values, error: '', loading: true });
 
-        updateProduct(match.params.productId, user._id, token, formData).then(data => { 
+        updateProduct(match.params.productId, user._id, token, formData).then(data => {
             if (data.error) {
                 setValues({ ...values, error: data.error });
             } else {
@@ -145,7 +145,7 @@ const UpdateProduct = ({match}) => {
                                 {c.name}
                             </option>
                         ))}
-                     
+
 
                 </select>
             </div>
@@ -165,7 +165,7 @@ const UpdateProduct = ({match}) => {
             </div>
 
             <button className="btn btn-outline-primary">Update Product</button>
-        </form> 
+        </form>
     );
 
 
@@ -189,13 +189,13 @@ const UpdateProduct = ({match}) => {
         );
 
 
-        const redirectUser = () => {
-            if (redirectToProfile) {
-                if (!error) {
-                    return <Redirect to="/" />;
-                }
+    const redirectUser = () => {
+        if (redirectToProfile) {
+            if (!error) {
+                return <Redirect to="/" />;
             }
-        };
+        }
+    };
 
 
 
@@ -206,11 +206,11 @@ const UpdateProduct = ({match}) => {
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2">
-                {showLoading()}
+                    {showLoading()}
                     {showSuccess()}
                     {showError()}
-                {newPostForm()}
-                {redirectUser()}
+                    {newPostForm()}
+                    {redirectUser()}
                 </div>
             </div>
         </Layout>

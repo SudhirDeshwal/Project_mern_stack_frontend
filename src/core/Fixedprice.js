@@ -1,3 +1,4 @@
+//Array of objects for price filter
 export const prices = [
     {
         _id: 0,

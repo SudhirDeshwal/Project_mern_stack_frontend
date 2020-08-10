@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout'
-import {getProducts} from './CoreApicalls'
+import { getProducts } from './CoreApicalls'
 import "../styles.css";
 import Card from './Card'
 
@@ -19,7 +19,7 @@ const Home = () => {
             }
         });
     };
-
+//by arrival
     const loadProductsByArrival = () => {
         getProducts('createdAt').then(data => {
             console.log(data);
@@ -36,39 +36,39 @@ const Home = () => {
         loadProductsBySell();
     }, []);
 
-return (
+    return (
 
-<Layout title="Explore Books" discription="Buy your Fav books here!!!" className="container-fluid">
+        <Layout title="Explore Books" discription="Buy your Fav books here!!!" className="container-fluid">
 
-       
-         <h2 className="mb-4">New Arrivals</h2>
+
+            <h2 className="mb-4">New Arrivals</h2>
             <div className="row">
-            {productsByArrival.map((product, i) => (
-                   <div key={i} className="col-2 mb-3">
-                 <Card  product={product}></Card>
-                      </div>
-                      ))}
+                {productsByArrival.map((product, i) => (
+                    <div key={i} className="col-2 mb-3">
+                        <Card product={product}></Card>
+                    </div>
+                ))}
             </div>
 
 
 
-        <h2 className="mb-4">Best Sellers</h2>
-        <div className="row">
-            {productsBySell.map((product, i) => (
+            <h2 className="mb-4">Best Sellers</h2>
+            <div className="row">
+                {productsBySell.map((product, i) => (
 
-           <div key={i} className="col-2 mb-3">
-                  <Card  product={product}></Card>
-                     </div>
+                    <div key={i} className="col-2 mb-3">
+                        <Card product={product}></Card>
+                    </div>
 
 
-            ))}
+                ))}
 
             </div>
 
-        
 
-</Layout>  
-);
+
+        </Layout>
+    );
 
 }
 export default Home; 

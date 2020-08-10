@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout'
-import {getProducts} from './CoreApicalls'
+import { getProducts } from './CoreApicalls'
 import "../styles.css";
 import Card from './Card'
-import {getCategories , getFilteredProducts } from './CoreApicalls'
+import { getCategories, getFilteredProducts } from './CoreApicalls'
 import Checkbox from './Checkbox'
-import {prices} from './Fixedprice'
+import { prices } from './Fixedprice'
 import RadioBox from './RadioBox'
 
-
+//shop page
 const Shop = () => {
 
     const [myFilters, setMyFilters] = useState({
         filters: { category: [], price: [] }
     });
 
-    const [categories, setCategories] = useState([]); 
+    const [categories, setCategories] = useState([]);
     const [error, setError] = useState(false);
     const [limit, setLimit] = useState(6);
     const [skip, setSkip] = useState(0);
@@ -24,7 +24,7 @@ const Shop = () => {
 
 
     const init = () => {
-        getCategories().then(data => { 
+        getCategories().then(data => {
             if (data.error) {
                 setError(data.error);
             } else {
@@ -33,7 +33,7 @@ const Shop = () => {
         });
     };
 
-
+//filters
     const loadFilteredResults = newFilters => {
         // console.log(newFilters);
         getFilteredProducts(skip, limit, newFilters).then(data => {
@@ -47,7 +47,7 @@ const Shop = () => {
         });
     };
 
-
+//load more 
     const loadMore = () => {
         let toSkip = skip + limit;
         // console.log(newFilters);
@@ -107,13 +107,13 @@ const Shop = () => {
         return array;
     };
 
-   
 
-  return(
 
-<Layout title="Shop Page" discription="Buy your Fav books here!!!" className="container-fluid">
+    return (
 
-               <div className="row">
+        <Layout title="Shop Page" discription="Buy your Fav books here!!!" className="container-fluid">
+
+            <div className="row">
                 <div className="col-4">
                     <h4>Filter by categories</h4>
                     <ul>
@@ -140,19 +140,19 @@ const Shop = () => {
                     <h2 className="mb-4">Products</h2>
                     <div className="row">
                         {filteredResults.map((product, i) => (
-                               <div key={i} className="col-2 mb-3">
+                            <div key={i} className="col-2 mb-3">
                                 <Card product={product} />
-                                </div>
-                            
+                            </div>
+
                         ))}
                     </div>
                     <hr />
                     {loadMoreButton()}
                 </div>
             </div>
-</Layout>  
+        </Layout>
 
-  )
+    )
 
 }
 

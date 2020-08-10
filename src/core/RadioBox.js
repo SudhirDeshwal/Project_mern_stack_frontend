@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+//to get category filters base
 const RadioBox = ({ prices, handleFilters }) => {
     const [value, setValue] = useState(0);
 

@@ -14,7 +14,7 @@ export const createCategory = (userId, token, category) => {
         })
         .catch(err => {
             console.log(err);
-        });   
+        });
 };
 
 //to get create product
@@ -28,7 +28,7 @@ export const createProduct = (userId, token, product) => {
         body: product
     })
         .then(response => {
-            return response.json();  
+            return response.json();
         })
         .catch(err => {
             console.log(err);
@@ -65,7 +65,7 @@ export const getProducts = () => {
 };
 
 export const deleteProduct = (productId, userId, token) => {
-    return fetch(`https://merchsid.herokuapp.com/api/product/${productId}/${userId}`, { 
+    return fetch(`https://merchsid.herokuapp.com/api/product/${productId}/${userId}`, {
         method: 'DELETE',
         headers: {
             Accept: 'application/json',
@@ -86,7 +86,7 @@ export const getProduct = productId => {
         .then(response => {
             return response.json();
         })
-        .catch(err => console.log(err)); 
+        .catch(err => console.log(err));
 };
 
 export const updateProduct = (productId, userId, token, product) => {
@@ -101,7 +101,7 @@ export const updateProduct = (productId, userId, token, product) => {
         .then(response => {
             return response.json();
         })
-        .catch(err => console.log(err)); 
+        .catch(err => console.log(err));
 };
 
 

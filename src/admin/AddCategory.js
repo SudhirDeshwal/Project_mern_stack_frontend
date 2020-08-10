@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../core/Layout'
-import "../styles.css"; 
+import "../styles.css";
 import { isAuthenticated } from '../auth/UserAuth'
 import { Link } from "react-router-dom";
 import { createCategory } from './adminApiCalls'
@@ -13,10 +13,10 @@ const AddCategory = () => {
 
 
 
-      // destructure user and token from localstorage
-      const { user, token } = isAuthenticated(); 
+    // destructure user and token from localstorage
+    const { user, token } = isAuthenticated();
 
-      const handleChange = e => {
+    const handleChange = e => {
         setError("");
         setName(e.target.value);
     };
@@ -26,7 +26,7 @@ const AddCategory = () => {
         e.preventDefault();
         setError("");
         setSuccess(false);
-     //   make request to api to create category
+        //   make request to api to create category
         createCategory(user._id, token, { name }).then(data => {
             if (data.error) {
                 setError(data.error);
@@ -36,8 +36,8 @@ const AddCategory = () => {
             }
         });
     };
-//Input
-      const newCategoryFom = () => (
+    //Input
+    const newCategoryFom = () => (
         <form onSubmit={clickSubmit}>
             <div className="form-group">
                 <label className="text-muted">Name</label>
@@ -68,7 +68,7 @@ const AddCategory = () => {
 
     const goBack = () => (
         <div className="mt-5">
-            <Link to="/admin/dashboard" className="text-warning"> 
+            <Link to="/admin/dashboard" className="text-warning">
                 Back to Dashboard
             </Link>
         </div>
@@ -88,7 +88,7 @@ const AddCategory = () => {
                     {goBack()}
                 </div>
             </div>
-        </Layout> 
+        </Layout>
     );
 
 

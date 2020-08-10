@@ -1,17 +1,17 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout'
-import "../styles.css"; 
+import "../styles.css";
 import { isAuthenticated } from '../auth/UserAuth'
 import { Link } from "react-router-dom";
-import {getProducts,deleteProduct} from './adminApiCalls'
+import { getProducts, deleteProduct } from './adminApiCalls'
 
 
 
-const ManageProducts = () => { 
+const ManageProducts = () => {
 
     const [products, setProducts] = useState([]);
 
-    const { user, token } = isAuthenticated(); 
+    const { user, token } = isAuthenticated();
 
     //tO Load all products
     const loadProducts = () => {
@@ -39,7 +39,7 @@ const ManageProducts = () => {
     useEffect(() => {
         loadProducts();
     }, []);
-    
+
 
     return (
         <Layout
@@ -47,7 +47,7 @@ const ManageProducts = () => {
             discription="Perform CRUD on products"
             className="container-fluid">
 
-<div className="row">
+            <div className="row">
                 <div className="col-12">
                     <h2 className="text-center">
                         Total {products.length} products
@@ -73,12 +73,12 @@ const ManageProducts = () => {
                                 </span>
                             </li>
                         ))}
-                    </ul> 
+                    </ul>
                     <br />
                 </div>
             </div>
-            
-        </Layout> 
+
+        </Layout>
     );
 };
 
