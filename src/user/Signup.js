@@ -10,7 +10,7 @@ const Singup = () => {
         {
             name: " ",
             email: " ",
-            password: " ",
+            password: "",
             error: false,
             success: false
         })
@@ -138,7 +138,7 @@ const Singup = () => {
             {showSuccess()}
             {showError()}
             {Signupform()}
-            {JSON.stringify(values)}
+            {/* {JSON.stringify(values)} */}
         </Layout>
 
     );

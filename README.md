@@ -3,8 +3,8 @@
 ## Developer Name : Sudhir
 
 ## Users/Role : 
-•	Admin 
-•	Normal user
+•	Admin : Login details => (Email : admin@gmail.com and  Password: admin123)
+•	Normal user(you can try by signup by yourself)
 
 ## Concept Summary :
 •	Project is created to sell products online where admin can create product category and new products and can assign categories to products. While users can check the products listed by admin using different filters such as new arrival, most seller etc.
