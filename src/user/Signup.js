@@ -38,7 +38,7 @@ const Singup = () => {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-              
+
 
             },
             body: JSON.stringify(user)
@@ -86,33 +86,33 @@ const Singup = () => {
 
     //User Sign up
     const Signupform = () => (
-     
-      <section className="row justify-content-center">
-       <section className = "col-8 ">  
-        <form className="form-container">
-  
-            <div className="form-group">
-                <label className="text-muted">Name</label>
-                <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
-            </div>
 
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
-            </div>
+        <section className="row justify-content-center">
+            <section className="col-8 ">
+                <form className="form-container">
 
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
-            </div>
+                    <div className="form-group">
+                        <label className="text-muted">Name</label>
+                        <input onChange={handleChange("name")} type="text" className="form-control" value={name}></input>
+                    </div>
 
-            <button onClick={clickSubmit} className="btn btn-success">
-                Submit
+                    <div className="form-group">
+                        <label className="text-muted">Email</label>
+                        <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
+                    </div>
+
+                    <div className="form-group">
+                        <label className="text-muted">Password</label>
+                        <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
+                    </div>
+
+                    <button onClick={clickSubmit} className="btn btn-success">
+                        Submit
              </button>
 
-     
-        </form>
-        </section>
+
+                </form>
+            </section>
         </section>
     )
 

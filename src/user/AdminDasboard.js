@@ -4,7 +4,7 @@ import "../styles.css";
 import { isAuthenticated } from '../auth/UserAuth'
 import { Link } from "react-router-dom";
 
-
+//admin dashboard
 const AdminDashboard = () => {
 
     const { user: { _id, name, email, role }   } = isAuthenticated();

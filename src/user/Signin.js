@@ -3,12 +3,12 @@ import { Redirect } from 'react-router-dom';
 import Layout from '../core/Layout';
 //import { API } from '../config';
 import "../styles.css";
-import { isAuthenticated } from '../auth/UserAuth' 
+import { isAuthenticated } from '../auth/UserAuth'
 
 const Singin = () => {
 
     //Sign in state
-    const [values, setValues] = useState( 
+    const [values, setValues] = useState(
         {
             email: " ",
             password: "",
@@ -17,7 +17,7 @@ const Singin = () => {
             redirect: false
         })
 
-    const { email, password, loading, error, redirect } = values; 
+    const { email, password, loading, error, redirect } = values;
     const { user } = isAuthenticated();
 
     //handle change in form
@@ -31,7 +31,7 @@ const Singin = () => {
             });
     }
 
-   //for local storage
+    //for local storage
     const authenticate = (data, next) => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('jwt', JSON.stringify(data));
@@ -51,11 +51,11 @@ const Singin = () => {
                 'Access-Control-Allow-Origin': 'http://localhost:3000'
 
             },
-            
+
             body: JSON.stringify(user)
-            
+
         })
-        
+
 
             .then(response => {
                 return response.json();
@@ -63,7 +63,7 @@ const Singin = () => {
             .catch(err => {
                 console.log(err);
             });
-            
+
     };
 
 
@@ -85,15 +85,15 @@ const Singin = () => {
                 }
                 else {
 
-                    authenticate(data , () =>{
+                    authenticate(data, () => {
                         setValues({
                             ...values,
                             redirect: true
-    
+
                         });
                     })
 
-                    
+
 
                 }
             })
@@ -106,26 +106,26 @@ const Singin = () => {
     //User Sign in
     const Signinform = () => (
         <section className="container-fluid bg">
-        <section className="row justify-content-center">
-        <section className = "col-8">
-        <form className="form-container">
-          <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
-            </div>
+            <section className="row justify-content-center">
+                <section className="col-8">
+                    <form className="form-container">
+                        <div className="form-group">
+                            <label className="text-muted">Email</label>
+                            <input onChange={handleChange("email")} type="email" className="form-control" value={email}></input>
+                        </div>
 
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
-            </div>
+                        <div className="form-group">
+                            <label className="text-muted">Password</label>
+                            <input onChange={handleChange("password")} type="password" className="form-control" value={password}></input>
+                        </div>
 
-            <button onClick={clickSubmit} className="btn btn-success">
-                Submit
+                        <button onClick={clickSubmit} className="btn btn-success">
+                            Submit
              </button>
-             </form>
-             </section>
-         </section>   
-         </section>          
+                    </form>
+                </section>
+            </section>
+        </section>
     )
 
     const showError = () => (
@@ -154,7 +154,7 @@ const Singin = () => {
         if (isAuthenticated()) {
             return <Redirect to="/" />;
         }
-    } 
+    }
 
 
     return (
