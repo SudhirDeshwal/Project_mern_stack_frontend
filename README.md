@@ -1,68 +1,78 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Details(FrontEnd)
+## Project Name: MERCH
+## Developer Name : Sudhir
 
-## Available Scripts
+## Users/Role : 
+•	Admin 
+•	Normal user
 
-In the project directory, you can run:
+## Concept Summary :
+•	Project is created to sell products online where admin can create product category and new products and can assign categories to products. While users can check the products listed by admin using different filters such as new arrival, most seller etc.
 
-### `npm start`
+## Functionalities :
+### `Register`  
+•	Login
+•	Sign up
+•	Sign out
+•	Private user who only logged on.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Product`
+•	New Product(only admin can create)
+•	Show image.
+•	Category will be automatically load in drop down from category table during from create.
+•	List ,Update and delete Products using filters.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `Categories`
+•	New Category
+•	List ,Update and delete Category
+•	Assign category to product as ref relationship in tables.
 
-### `npm test`
+### `Role Management and Two Dashboards` 
+•	User can sign up and check products with user dashboard
+•	Admin can Manage Product Categories and Products Listing with admin dashboard.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Product Manipulation`
+•	List product
+•	Search Product
+•	Filter Sort Product by arrival, sold by , price range.
 
-### `npm run build`
+### `Cart`
+•	Add  , remove , update and delte Products from cart.
+•	Calulcaute total price with all Product in cart.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Validation`
+•	Error handling on backend and front end on all fields in whole website.
+•	Validation for all parameters in helpers.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `Payment`
+•	Get Token from Brain tree api.
+•	If Token is real with user id , the show dropin form braintree api to enter card details.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Assignment of work:
+•	All functionality created by me(Sudhir) as its an individual  project for me.
 
-### `npm run eject`
+## Developer Details
+Name : Sudhir
+Id: N01324321
+Email: deshwalsudhir07@gmail.com
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Server Website Deploment is done at https://merchsid.herokuapp.com/
+Front End Website Deploment is done at https://booklibs.herokuapp.com/
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## List of Main pages of Website
+### `1.Login`
+### `2.Sign up`
+### `3.Home`
+### `4.Shop`
+### `5.Admin Dashboard`
+### `6.New Category`
+### `7.New Product`
+### `8.Update Product`
+### `9.Manage Product`
+### `10.User Dashboard`
+### `11.View Cart`
+### `12.View Single Product`
+### `13.Payemnt Drop in`
