@@ -22,7 +22,7 @@ const Menu = ({ history }) =>
         <div>
 
             <nav id="menu" className="navbar navbar-default navbar-fixed-top bg-warning">
-                <a className="navbar-brand">MRC</a>
+                <a className="navbar-brand">booksForYou</a>
                 <div className="container">
                     <ul className="nav nav-tabs bg-secondary">
 
