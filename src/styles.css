@@ -97,6 +97,7 @@ border-radius: 10px;
  .navbar-brand {
   font-weight: bold;
   font-size: 28px;
+  font-style: italic;
  }
  .jumbotron {
      height: 350px;
